@@ -1,7 +1,9 @@
 package com.foodie.homeslice.entity;
 
 import java.time.LocalDate;
+
 import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,11 @@ public class Order {
 	@ElementCollection
 	private List<OrderedItem> items= new ArrayList<>();
 	private Double totalPrice;
+
+	private LocalDate date;
+
 	private LocalDateTime date;
+
 	private String status;
 	public Long getOrderId() {
 		return orderId;
@@ -47,10 +53,17 @@ public class Order {
 	public void setTotalPrice(Double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+	public void setDate(LocalDate date) {
+
 	public LocalDateTime getDate() {
 		return date;
 	}
 	public void setDate(LocalDateTime date) {
+
 		this.date = date;
 	}
 	public String getStatus() {
