@@ -1,5 +1,7 @@
 package com.foodie.homeslice.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +36,18 @@ public class PreferenceServiceImpl implements PreferenceService {
 		responseDto.setStatusCode(ApplicationConstants.SUCCESS_CODE);
 		responseDto.setMessage(ApplicationConstants.PREFERENCE_SUCCESSMESSAGE);
 		return responseDto;
+	}
+
+	@Override
+	public List<Long> getFavourites(Long customerId) {
+		List<Long> preferences=preferenceRepository.findAllByCustomerIdAndPriority(customerId, Priority.HIGH);	
+		return preferences;
+	}
+
+	@Override
+	public List<Long> getLikes(Long customerId) {
+		List<Long> likes=preferenceRepository.findAllByCustomerIdAndPrioritySorted(customerId, Priority.LOW);
+		return likes;
 	}
 	
 	
