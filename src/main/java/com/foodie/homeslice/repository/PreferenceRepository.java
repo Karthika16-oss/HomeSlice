@@ -6,4 +6,6 @@ import com.foodie.homeslice.entity.Preference;
 
 public interface PreferenceRepository extends JpaRepository<Preference, Long> {
 
+	Preference findByItemId(Long long1);
+
 }

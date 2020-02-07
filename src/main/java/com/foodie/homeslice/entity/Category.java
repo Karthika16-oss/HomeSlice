@@ -17,6 +17,7 @@ public class Category {
 	private Long categoryId;
 	@Enumerated(EnumType.STRING)
 	private CategoryName categoryName;
+	
 	public Long getCategoryId() {
 		return categoryId;
 	}

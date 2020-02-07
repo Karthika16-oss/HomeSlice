@@ -7,6 +7,7 @@ public class OrderedItem {
 	
 	private Long itemId;
 	private Integer quantity;
+	
 	public Long getItemId() {
 		return itemId;
 	}
